@@ -1,4 +1,7 @@
 <div class="panel large-10">
   <h2>Questions!</h2>
-  <%= link_to "New Question", new_question_path %>
+  <% @questions.each do |question| %>
+    <h4><%= link_to question.ask, question %></h4>
+  <% end %>
+  <%= link_to "New Question", new_question_path, :class => "button expand" %>
 </div>
