@@ -34,6 +34,9 @@ end
 gem 'dynamic_form', '~> 1.1.4'
 gem 'jquery-rails'
 
+#devise authentication
+gem 'devise', '2.1.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

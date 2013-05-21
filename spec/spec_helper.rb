@@ -35,4 +35,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  #clear the mongodb database before running rspec
+  Mongoid.purge!
+  Mongoid::IdentityMap.clear
 end
