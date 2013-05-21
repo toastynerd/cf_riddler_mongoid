@@ -8,8 +8,8 @@ feature "create questions" do
 
   scenario do
     fill_in "Ask", :with => "Why?"
-    fill_in "Details", :with => "here's the details."
-    click_link "Create Question"
+    fill_in "Detail", :with => "here's the details."
+    click_button "Create Question"
     page.should have_content "Question was successfully created."
   end
 end
