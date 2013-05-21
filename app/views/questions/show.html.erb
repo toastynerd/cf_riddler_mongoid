@@ -2,11 +2,11 @@
   <h2>Question: <%= @question.ask %></h2>
   <p>Details: <%= @question.detail %></p>
   <h4>Answer: <%= @question.answer %></h4>
-  <span id="author">Being edited by:
+  <span id="author">Collaborators:
     <% @question.users.each do |user| %>
     <%= user.email %>
     <% end %>
-  </span>
+  </span></br>
   <%= link_to "Revise Question", edit_question_path, :class => "button" %>
   <%= link_to "Delete Question", question_path(@question), :method => :delete, :confirm => "Are you sure?", :class => "button" %>
 </div>
