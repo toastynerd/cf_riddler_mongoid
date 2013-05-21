@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :find_question, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -11,6 +12,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(params[:question])
+    @question.users << current_user
     if @question.save
       flash[:notice] = "Question was successfully created."
       redirect_to @question
@@ -29,6 +31,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    @question.users << current_user
     if @question.update_attributes(params[:question])
       flash[:notice]="Question has been updated."
       redirect_to @question
